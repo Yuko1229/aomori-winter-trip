@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="青森駅発・十和田行きの1泊2日プラン。時間割、生ものなしで市場を楽しむ組み立て、曜日の注意点つき。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%8E%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:light dark}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0}
+    img{max-width:100%}
+    [hidden]{display:none!important}
+  </style>
+  <title>青森 冬の一泊二日</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Roboto+Mono:wght@500;700&display=swap">
+  <style>
+    :root{
+      --ground:#EFF2F5;
+      --surface:#FFFFFF;
+      --surface-2:#E7ECF1;
+      --ink:#14212E;
+      --ink-soft:#526375;
+      --ink-faint:#7C8B9B;
+      --hairline:#D2DAE2;
+      --sea:#1B3A5C;
+      --sea-soft:#3D6994;
+      --alert:#C13A22;
+      --ok:#2C6E52;
+      --apple:#8E1730;
+      --shadow:0 1px 2px rgba(20,33,46,.06), 0 8px 24px -16px rgba(20,33,46,.28);
+      --step:clamp(.9rem,.86rem + .2vw,1rem);
+    }
+    @media (prefers-color-scheme:dark){
+      :root:not([data-theme="light"]){
+        --ground:#0D161F;
+        --surface:#152230;
+        --surface-2:#1B2B3A;
+        --ink:#E3EAF1;
+        --ink-soft:#9AAABA;
+        --ink-faint:#77899B;
+        --hairline:#25374A;
+        --sea:#8FB4D6;
+        --sea-soft:#6E96BC;
+        --alert:#EC7255;
+        --ok:#63B58C;
+        --apple:#E0728C;
+        --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+      }
+    }
+    :root[data-theme="dark"]{
+      --ground:#0D161F;
+      --surface:#152230;
+      --surface-2:#1B2B3A;
+      --ink:#E3EAF1;
+      --ink-soft:#9AAABA;
+      --ink-faint:#77899B;
+      --hairline:#25374A;
+      --sea:#8FB4D6;
+      --sea-soft:#6E96BC;
+      --alert:#EC7255;
+      --ok:#63B58C;
+      --apple:#E0728C;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      background:var(--ground);
+      color:var(--ink);
+      font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+      font-size:var(--step);
+      line-height:1.75;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{
+      max-width:44rem;
+      margin:0 auto;
+      padding-inline:20px;
+      padding-block:clamp(32px,6vw,64px) 72px;
+      display:flex;
+      flex-direction:column;
+      gap:clamp(36px,5vw,56px);
+    }
+
+    /* ---------- header ---------- */
+    header{display:flex;flex-direction:column;gap:14px}
+    .eyebrow{
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--sea-soft);
+    }
+    h1{
+      font-family:"Shippori Mincho","Yu Mincho",serif;
+      font-weight:800;
+      font-size:clamp(2.1rem,1.4rem + 3.4vw,3.3rem);
+      line-height:1.2;
+      letter-spacing:.02em;
+      margin:0;
+      text-wrap:balance;
+    }
+    h1 .thin{font-weight:600;color:var(--sea)}
+    .lede{color:var(--ink-soft);margin:0;max-width:32em}
+    .strait{
+      height:3px;border:0;margin:2px 0 0;
+      background:linear-gradient(90deg,var(--sea) 0%,var(--sea-soft) 38%,var(--hairline) 68%,var(--alert) 100%);
+      opacity:.85;
+    }
+    .meta{
+      display:flex;flex-wrap:wrap;gap:6px 22px;
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-size:.74rem;letter-spacing:.04em;color:var(--ink-faint);
+    }
+    .meta b{color:var(--ink-soft);font-weight:500}
+
+    /* ---------- generic section ---------- */
+    section{display:flex;flex-direction:column;gap:18px}
+    h2{
+      font-family:"Shippori Mincho","Yu Mincho",serif;
+      font-weight:600;font-size:1.35rem;margin:0;letter-spacing:.03em;
+      display:flex;align-items:baseline;gap:12px;
+    }
+    h2 .num{
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-size:.72rem;font-weight:700;letter-spacing:.14em;
+      color:var(--sea-soft);
+      border:1px solid var(--hairline);
+      border-radius:2px;padding:2px 7px;
+      flex:none;
+    }
+    h2 .when{
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-size:.72rem;letter-spacing:.06em;color:var(--ink-faint);
+      margin-left:auto;font-weight:500;
+    }
+
+    /* ---------- weekday strip ---------- */
+    .notice{
+      background:var(--surface);
+      border:1px solid var(--hairline);
+      border-left:3px solid var(--alert);
+      border-radius:3px;
+      padding:16px 18px;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .notice h3{
+      font-family:"Zen Kaku Gothic New",sans-serif;
+      font-size:.82rem;font-weight:700;letter-spacing:.1em;margin:0;color:var(--alert);
+    }
+    .days{display:flex;gap:6px;flex-wrap:wrap}
+    .day{
+      flex:1 1 3.1rem;min-width:3.1rem;
+      border:1px solid var(--hairline);border-radius:3px;
+      padding:7px 4px;text-align:center;background:var(--ground);
+    }
+    .day .d{
+      font-family:"Shippori Mincho",serif;font-size:1rem;font-weight:600;display:block;line-height:1.3;
+    }
+    .day .m{
+      font-family:"Roboto Mono",monospace;font-size:.8rem;font-weight:700;display:block;line-height:1.4;
+    }
+    .day.go{background:var(--surface);border-color:var(--ok)}
+    .day.go .m{color:var(--ok)}
+    .day.hmm .m{color:var(--ink-faint)}
+    .day.no{border-color:var(--alert)}
+    .day.no .m{color:var(--alert)}
+    .notice p{margin:0;font-size:.86rem;color:var(--ink-soft)}
+
+    /* ---------- timeline ---------- */
+    .tl{display:flex;flex-direction:column;gap:0;list-style:none;padding:0;margin:0}
+    .tl li{
+      display:grid;
+      grid-template-columns:4.4rem 1fr;
+      gap:0 16px;
+      padding-block:14px;
+      border-top:1px solid var(--hairline);
+    }
+    .tl li:first-child{border-top:0;padding-top:0}
+    .time{
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-variant-numeric:tabular-nums;
+      font-size:.86rem;font-weight:700;color:var(--sea);
+      padding-top:.15em;
+    }
+    .ev{display:flex;flex-direction:column;gap:5px;min-width:0}
+    .ev h3{
+      margin:0;font-size:1.02rem;font-weight:700;line-height:1.5;
+      font-family:"Zen Kaku Gothic New",sans-serif;
+    }
+    .ev p{margin:0;color:var(--ink-soft);font-size:.9rem}
+    .facts{
+      display:flex;flex-wrap:wrap;gap:4px 14px;
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-size:.72rem;letter-spacing:.02em;color:var(--ink-faint);
+      font-variant-numeric:tabular-nums;
+    }
+    .move{
+      grid-column:2;
+      display:flex;align-items:center;gap:8px;
+      font-family:"Roboto Mono",ui-monospace,monospace;
+      font-size:.72rem;letter-spacing:.03em;color:var(--sea-soft);
+      padding-top:8px;
+    }
+    .move::before{content:"";width:14px;height:1px;background:var(--sea-soft);flex:none}
+    .tag{
+      display:inline-block;font-family:"Zen Kaku Gothic New",sans-serif;
+      font-size:.68rem;font-weight:700;letter-spacing:.08em;
+      padding:1px 6px;border-radius:2px;vertical-align:.14em;margin-right:6px;
+      background:var(--surface-2);color:var(--ink-soft);
+    }
+    .tag.apple{color:var(--apple);background:transparent;border:1px solid currentColor}
+    .tag.art{color:var(--sea);background:transparent;border:1px solid currentColor}
+
+    /* ---------- food ---------- */
+    .food{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:560px){.food{grid-template-columns:1fr}}
+    .col{
+      background:var(--surface);border:1px solid var(--hairline);border-radius:3px;
+      padding:16px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);
+    }
+    .col h3{
+      margin:0;font-size:.8rem;font-weight:700;letter-spacing:.1em;
+      display:flex;align-items:center;gap:8px;
+    }
+    .col.yes h3{color:var(--ok)}
+    .col.avoid h3{color:var(--alert)}
+    .col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+    .col li{font-size:.88rem;line-height:1.6;padding-left:16px;position:relative}
+    .col.yes li::before{content:"○";position:absolute;left:0;color:var(--ok);font-size:.7rem;top:.42em}
+    .col.avoid li::before{content:"×";position:absolute;left:0;color:var(--alert);font-size:.78rem;top:.3em}
+    .col li span{display:block;color:var(--ink-faint);font-size:.78rem;line-height:1.5}
+
+    /* ---------- money ---------- */
+    .tablewrap{overflow-x:auto}
+    table{border-collapse:collapse;width:100%;min-width:19rem;font-size:.88rem}
+    th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--hairline)}
+    th{
+      font-family:"Roboto Mono",monospace;font-size:.68rem;font-weight:700;
+      letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);
+    }
+    td.yen{
+      text-align:right;padding-right:0;white-space:nowrap;
+      font-family:"Roboto Mono",monospace;font-variant-numeric:tabular-nums;font-weight:500;
+    }
+    td small{color:var(--ink-faint);font-size:.76rem}
+
+    /* ---------- todo ---------- */
+    .todo{
+      border:1px dashed var(--hairline);border-radius:3px;padding:16px 18px;
+      display:flex;flex-direction:column;gap:8px;background:transparent;
+    }
+    .todo ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+    .todo li{font-size:.88rem;color:var(--ink-soft)}
+    footer{
+      border-top:1px solid var(--hairline);padding-top:16px;
+      font-size:.78rem;color:var(--ink-faint);line-height:1.7;
+    }
+    a{color:var(--sea);text-decoration-thickness:1px;text-underline-offset:2px}
+    a:focus-visible,.day:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">1泊2日 / 11月以降</span>
+    <h1>青森 <span class="thin">冬の一泊二日</span></h1>
+    <hr class="strait">
+    <p class="lede">青森駅で歌碑とねぶた、十和田でアート。海鮮は加熱でいただいて、りんごは「ふじ」の旬に合わせて。</p>
+    <div class="meta">
+      <span><b>移動</b> 公共交通＋タクシー</span>
+      <span><b>起点</b> 郡山</span>
+      <span><b>泊</b> 青森駅前 1泊</span>
+      <span><b>帰着駅</b> 七戸十和田</span>
+    </div>
+  </header>
+
+  <div class="notice">
+    <h3>出発曜日でプランが崩れます</h3>
+    <div class="days">
+      <div class="day go"><span class="d">月</span><span class="m">○</span></div>
+      <div class="day hmm"><span class="d">火</span><span class="m">△</span></div>
+      <div class="day go"><span class="d">水</span><span class="m">○</span></div>
+      <div class="day go"><span class="d">木</span><span class="m">○</span></div>
+      <div class="day go"><span class="d">金</span><span class="m">○</span></div>
+      <div class="day go"><span class="d">土</span><span class="m">○</span></div>
+      <div class="day no"><span class="d">日</span><span class="m">×</span></div>
+    </div>
+    <p><b>日曜出発は×</b> — 2日目の月曜に十和田市現代美術館が休館。<b>火曜出発は△</b> — のっけ丼（青森魚菜センター）が定休日なので、昼を別の店に振り替えることになります。土曜出発なら市場は15時までなので昼を少し早めに。</p>
+  </div>
+
+  <section>
+    <h2><span class="num">DAY 1</span>青森市<span class="when">歌碑・ねぶた・市場</span></h2>
+    <ul class="tl">
+
+      <li>
+        <div class="time">10:15</div>
+        <div class="ev">
+          <h3>青森駅 着</h3>
+          <p>郡山を7時台に出る新幹線で、仙台・新青森を経由。新青森から青森駅は奥羽線で6分ほど。</p>
+        </div>
+        <div class="move">新青森 → 青森 / 奥羽線 6分</div>
+      </li>
+
+      <li>
+        <div class="time">10:30</div>
+        <div class="ev">
+          <h3><span class="tag apple">りんご</span>A-FACTORY</h3>
+          <p>駅を出てすぐ。りんごジュースの飲み比べ、アップルパイ、生の「ふじ」もここで確保できます。シードル工房はガラス越しに見学。</p>
+          <div class="facts"><span>徒歩2分</span><span>10:00–19:00</span></div>
+        </div>
+        <div class="move">徒歩 5分 / ウォーターフロント沿い</div>
+      </li>
+
+      <li>
+        <div class="time">11:00</div>
+        <div class="ev">
+          <h3>津軽海峡・冬景色 歌謡碑</h3>
+          <p>青函連絡船メモリアルシップ八甲田丸の横。1995年7月建立。ボタンを押すと曲が流れます。目の前が本物の津軽海峡なので、11月以降ならまさに歌のとおりの空の色。</p>
+          <div class="facts"><span>八甲田丸 9:00–19:00</span><span>無休</span></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="time">11:45</div>
+        <div class="ev">
+          <h3>のっけ丼（青森魚菜センター）</h3>
+          <p>食事券を買って、市場の約30店舗を回りながら自分の丼を組み立てる方式。焼きホタテ、炭火の焼き魚、いかメンチ、玉子焼き、惣菜で十分「のっけ丼」になります。加熱ネタは冷めて並ぶこともあるので「今焼いたものある？」と一声。</p>
+          <div class="facts"><span>12枚 2,200円</span><span>バラ 190円/枚</span><span>7:00–16:00（土15:00）</span><span>火曜定休</span></div>
+        </div>
+        <div class="move">徒歩 5分 / 駅正面へ戻る</div>
+      </li>
+
+      <li>
+        <div class="time">13:15</div>
+        <div class="ev">
+          <h3>ねぶたの家 ワ・ラッセ</h3>
+          <p>実物の大型ねぶたが5台。和紙越しの灯りと、間近で見る鏡絵の迫力はここだけ。館内にショップと食事処もあります。</p>
+          <div class="facts"><span>大人 620円</span><span>9:00–18:00</span><span>最終入場 17:30</span></div>
+        </div>
+        <div class="move">タクシー 約20分 / 三内丸山方面</div>
+      </li>
+
+      <li>
+        <div class="time">15:00</div>
+        <div class="ev">
+          <h3><span class="tag art">アート</span>青森県立美術館</h3>
+          <p>開館20周年の企画展「志賀理江子 なぬもかぬも」を2026年10月31日から開催中。奈良美智の《あおもり犬》は屋外なので、雪が積もると見え方が変わります。隣は三内丸山遺跡。</p>
+          <div class="facts"><span>常設 700円</span><span>9:30–17:00</span><span>最終入館 16:30</span></div>
+        </div>
+        <div class="move">タクシー 約20分 / 駅前へ戻る</div>
+      </li>
+
+      <li>
+        <div class="time">18:00</div>
+        <div class="ev">
+          <h3>夕食 — 加熱の郷土料理</h3>
+          <p>ホタテの貝焼き味噌、じゃっぱ汁、焼きホタテ。どれも火を通す青森の定番なので、生ものを外しても選択肢が減りません。駅前に泊まって翌朝すぐ動けるようにしておきます。</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">DAY 2</span>十和田市<span class="when">現代アート・バラ焼き</span></h2>
+    <ul class="tl">
+
+      <li>
+        <div class="time">08:40</div>
+        <div class="ev">
+          <h3>ホテル発 → 新青森へ</h3>
+          <p>八戸経由よりも七戸十和田経由のほうが乗車時間が短く、体はずっと楽です。ただし七戸十和田に停まる列車は本数が少ないので、前日に必ず時刻を確認。</p>
+        </div>
+        <div class="move">新青森 → 七戸十和田 / 新幹線 約15分</div>
+      </li>
+
+      <li>
+        <div class="time">09:40</div>
+        <div class="ev">
+          <h3>七戸十和田駅 着 → タクシー</h3>
+          <p>駅から美術館まで約20分。駅の物産コーナーは帰りのりんご買い足しに使えます。</p>
+        </div>
+        <div class="move">タクシー 約20分 / 十和田市街</div>
+      </li>
+
+      <li>
+        <div class="time">10:10</div>
+        <div class="ev">
+          <h3><span class="tag art">アート</span>十和田市現代美術館</h3>
+          <p>作品ごとに部屋が独立した構成なので、自分のペースで座って休みながら回れます。ロン・ミュエクの《スタンディング・ウーマン》、栗林隆の《ザンプランド》など。</p>
+          <div class="facts"><span>企画展あり 1,800円</span><span>企画展なし 1,000円</span><span>9:00–17:00</span><span>最終入館 16:30</span><span>月曜休館</span></div>
+        </div>
+        <div class="move">徒歩 すぐ / 道路をはさんで向かい</div>
+      </li>
+
+      <li>
+        <div class="time">11:40</div>
+        <div class="ev">
+          <h3>アート広場・官庁街通り</h3>
+          <p>無料の屋外展示エリア。草間彌生《愛はとこしえ十和田でうたう》の赤と水玉、エルヴィン・ヴルム《ファット・ハウス》などが、雪の白を背景にすると強烈に映えます。官庁街通り（駒街道）はまっすぐな並木道。</p>
+          <div class="facts"><span>無料</span><span>屋外</span></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="time">12:30</div>
+        <div class="ev">
+          <h3>昼食 — 十和田バラ焼き</h3>
+          <p>牛バラ肉と大量の玉ねぎを甘辛いタレで鉄板焼きにする、十和田のご当地もの。市街に提供店が多く、当日決めても大丈夫。</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="time">14:00</div>
+        <div class="ev">
+          <h3><span class="tag apple">りんご</span>買い足し → 帰路</h3>
+          <p>11月以降は「ふじ」の旬。生のりんごは1日目のA-FACTORYで買っておいて、2日目は七戸十和田駅で加工品を追加するのが荷物的にも楽です。</p>
+          <div class="facts"><span>七戸十和田 → 郡山</span></div>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">FOOD</span>生ものなしで市場を楽しむ<span class="when">のっけ丼の組み立て</span></h2>
+    <div class="food">
+      <div class="col yes">
+        <h3>火を通したネタ</h3>
+        <ul>
+          <li>焼きホタテ・ホタテの貝焼き味噌<span>工藤ほたて店、ほたて溝江水産</span></li>
+          <li>炭火の焼き魚<span>干物須藤商店、塩干山正高野。ほっけ・鮭・さばは水銀も低め</span></li>
+          <li>目の前で焼く焼き肉<span>肉の寺山。しっかり火を通してもらう</span></li>
+          <li>いかメンチ<span>青森の揚げ物定番</span></li>
+          <li>惣菜・煮物<span>山田惣菜</span></li>
+          <li>玉子焼き・お味噌汁・お漬物</li>
+        </ul>
+      </div>
+      <div class="col avoid">
+        <h3>生のまま出るネタ</h3>
+        <ul>
+          <li>いくら<span>醤油漬けも加熱はしていない</span></li>
+          <li>うに・生ホタテ・サーモン・甘えび<span>刺身として切って出される</span></li>
+          <li>マグロ赤身・大トロ<span>食事券は赤身1枚、大トロ3枚</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">COST</span>入館料・食事券</h2>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th scope="col">項目</th><th scope="col" style="text-align:right">大人ひとり</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>のっけ丼 食事券<small>／12枚セット</small></td><td class="yen">2,200</td></tr>
+          <tr><td>ねぶたの家 ワ・ラッセ</td><td class="yen">620</td></tr>
+          <tr><td>青森県立美術館<small>／常設。企画展は別途</small></td><td class="yen">700</td></tr>
+          <tr><td>十和田市現代美術館<small>／企画展開催中</small></td><td class="yen">1,800</td></tr>
+          <tr><td>十和田アート広場</td><td class="yen">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">TODO</span>行く日が決まったら確認</h2>
+    <div class="todo">
+      <ul>
+        <li>新青森 → 七戸十和田で、朝に停車する新幹線の時刻（本数が少ない）</li>
+        <li>七戸十和田駅のタクシーの待機状況、または事前予約</li>
+        <li>十和田市現代美術館の企画展の会期と、その時期の観覧料</li>
+        <li>青森県立美術館の休館日（展示替えで臨時休館あり）</li>
+        <li>夕食の店の営業日と予約可否</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    掲載の料金・時間は各施設の公表情報にもとづく計画時点のものです。訪問前に最新情報をご確認ください。
+  </footer>
+
+</div>
+</body>
+</html>
